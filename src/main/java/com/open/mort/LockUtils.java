@@ -73,8 +73,8 @@ public class LockUtils implements InitializingBean {
      */
     public static boolean getLockLoop(String key, int expire , Jedis jedis) {
 
-
-        long expireTime = System.currentTimeMillis() + expire;
+        long currentTime = System.currentTimeMillis() ;
+        long expireTime = currentTime + expire;
 
         String value = String.valueOf(expireTime) + "_" + UUID.randomUUID();
         try {
@@ -90,10 +90,11 @@ public class LockUtils implements InitializingBean {
             if (0 == ret.longValue()) {
 
                 String old = jedis.get(key);
+                if(null == old) return false;
                 String[] strings = old.split("_");
                 long oldExpireTimeStamp = Long.valueOf(strings[0]);
 
-                if (oldExpireTimeStamp < System.currentTimeMillis()) {
+                if (oldExpireTimeStamp < currentTime) {
 
                     if (old.equals(jedis.getSet(key, value))) {
                         jedis.expire(key, expire/1000);        // UUID 作用
@@ -106,7 +107,6 @@ public class LockUtils implements InitializingBean {
             }
         } catch (Exception e) {
             logger.error("exception {}", e);
-            jedis.close();
             return false;
         }
 

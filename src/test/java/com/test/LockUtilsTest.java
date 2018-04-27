@@ -35,11 +35,13 @@ public class LockUtilsTest {
             Callable<Boolean> callable = new Callable<Boolean>() {
                 @Override
                 public Boolean call() throws Exception {
-                    boolean ret = LockUtils.getLock("174874816" , 1000,1000);
+                    boolean ret = LockUtils.getLock("174874816" , 4000,8000);
                     logger.info("LockUtils.getLock {}" , ret);
-                    Thread.sleep(50);
-                    boolean retRelease = LockUtils.releaseLock("174874816" );
-                    logger.info("LockUtils.releaseLock {}" , retRelease);
+                    Thread.sleep(2000);
+                    if(ret) {
+                        boolean retRelease = LockUtils.releaseLock("174874816");
+                        logger.info("LockUtils.releaseLock {}", retRelease);
+                    }
                     return ret;
                 }
             };

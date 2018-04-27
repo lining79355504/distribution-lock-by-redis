@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0adf6d3a-33e0-4806-ad6a-4001fe751abc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,28 +26,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LockUtilsTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LockUtilsTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="15">
+              <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#890#911#0" expanded="true" />
-                <element signature="e#998#1501#0" expanded="true" />
-                <element signature="e#1500#1501#0" expanded="true" />
-                <element signature="e#1556#1565#0" expanded="true" />
+                <element signature="e#998#1561#0" expanded="true" />
+                <element signature="e#1560#1561#0" expanded="true" />
+                <element signature="e#1616#1625#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="LockUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="201">
+              <caret line="83" column="16" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="28" />
+              <folding>
+                <element signature="e#3677#3678#0" expanded="true" />
+                <element signature="e#3721#3722#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,15 +79,17 @@
       <find>ERROR_FILE</find>
       <find>acquire</find>
       <find>FILE</find>
-      <find>acquire lock</find>
       <find>get thread</find>
       <find>LockUtils.getLock</find>
       <find>expire</find>
       <find>jedis.expire</find>
       <find>jedis</find>
-      <find>LockUtils.getLock</find>
       <find>main LockUtils.getLock true</find>
+      <find>acquire lock</find>
+      <find>1524814104399_9e55f80a-f7e0-49d4-b08e-f3c7d19b3876</find>
+      <find>[pool-1-thread-80</find>
       <find>LockUtils.releaseLock</find>
+      <find>LockUtils.getLock false</find>
       <find>LockUtils.getLock true</find>
       <find>acquire lock 174874816</find>
     </findStrings>
@@ -108,10 +114,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/open/service/DistributeLockService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/spring-core.xml" />
         <option value="$PROJECT_DIR$/dev_config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java" />
       </list>
     </option>
   </component>
@@ -180,6 +186,11 @@
             <path>
               <item name="distributionlockbyredis" type="b2602c69:ProjectViewProjectNode" />
               <item name="distributionlockbyredis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="distributionlockbyredis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="distributionlockbyredis" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,39 +425,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 15m 59s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 41m 08s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 19m 39s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 44m 29s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 21m 20s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 46m 09s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 22m 38s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 47m 07s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 23m 12s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 51m 21s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 23m 50s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 52m 04s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 27m 43s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 53m 39s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 13h 28m 04s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 55m 14s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 14h 20m 48s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 59m 06s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 14h 25m 54s.xml">
+    <history-entry file="LockUtilsTest_lockTest - 2018.04.27 at 15h 59m 58s.xml">
       <configuration name="LockUtilsTest.lockTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27014000" />
+    <option name="totallyTimeSpent" value="30812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="826" extended-state="0" />
@@ -469,14 +480,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58390176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49795362" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -509,7 +521,6 @@
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -730,6 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="162" column="4" lean-forward="false" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,20 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="120" column="26" lean-forward="false" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1192#1193#0" expanded="false" />
-            <element signature="e#1264#1265#0" expanded="false" />
-            <element signature="e#3633#3634#0" expanded="false" />
-            <element signature="e#3677#3678#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -936,20 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#890#911#0" expanded="true" />
-            <element signature="e#998#1501#0" expanded="true" />
-            <element signature="e#1500#1501#0" expanded="true" />
-            <element signature="e#1556#1565#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.git/info/exclude">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -961,8 +945,33 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/open/mort/LockUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="83" column="16" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="28" />
+          <folding>
+            <element signature="e#3677#3678#0" expanded="true" />
+            <element signature="e#3721#3722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/LockUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#890#911#0" expanded="true" />
+            <element signature="e#998#1561#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1616#1625#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
