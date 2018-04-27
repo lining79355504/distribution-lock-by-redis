@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <!-- 应用名称 -->
+    <property name="APP_NAME" value="Spring_mybatis_demo" />
+    <!--日志文件的保存路径,首先查找系统属性-Dlog.dir,如果存在就使用其；否则，在当前目录下创建名为logs目录做日志存放的目录 -->
+    <property name="LOG_HOME" value="${log.dir:-logs}/${APP_NAME}" />
+    <!-- 日志输出格式 -->
+    <property name="ENCODER_PATTERN"
+              value="[%d{yyyy-MM-dd  HH:mm:ss.SSS}] [%thread] %-5level %logger{80} - %msg%n" />
+    <contextName>${APP_NAME}</contextName>
+
+    <!-- 控制台日志：输出全部日志到控制台  不设置 idea 的console 看不到-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${ENCODER_PATTERN}</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件日志：输出全部日志到文件 -->
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/output.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/output.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxHistory>7</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>2GB</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${ENCODER_PATTERN}</pattern>
+        </encoder>
+
+
+    </appender>
+
+    <!-- 错误日志：用于将错误日志输出到独立文件 -->
+    <appender name="ERROR_FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/error.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/error.%d{yyyy-MM-dd_HH_mm}.%i.log.zip</fileNamePattern>   <!--logback会从 fileNamePattern 中推导出滚动的间隔-->
+            <maxHistory>7</maxHistory>   <!-- 触发 根据回滚时间来处理 %d{yyyy-MM-dd_HH_mm} 就表示按分钟rolling 针对7d  -->
+            <maxFileSize>2GB</maxFileSize>  <!--  实时 rolling  -->
+            <totalSizeCap>4GB</totalSizeCap>   <!-- 根据回滚时间来处理 %d{yyyy-MM-dd_HH_mm} 就表示按分钟rolling 触发  -->
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${ENCODER_PATTERN}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>   <!-- 根据此处的设置  logback 会自动处理 WARN以及大于WARN级别的日志(ERROR)进入 error 文件 -->
+        </filter>
+    </appender>
+
+    <!-- 独立输出的同步日志 -->
+    <appender name="SYNC_FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/sync.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/sync.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxHistory>7</maxHistory>
+            <maxFileSize>2GB</maxFileSize>
+            <totalSizeCap>4GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${ENCODER_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--制定自己的包下的文件 输出到自己定义的log 文件里  防止在一个文件里被日志淹没 -->
+    <logger name="log.sync" level="DEBUG" addtivity="true">
+        <appender-ref ref="SYNC_FILE" />    <!-- 会将 log.sys包下面的类 DEBUG 及其以上级别的日志输出到 appender 是 SYNC_FILE的文件-->
+    </logger>    <!-- addtivity = true  则会向root级别的升级打印 相当于打印输出2次 是否向上级传递打印信息  默认true-->
+
+
+
+    <!--logstash distribute log  sys -->
+    <!--<appender name="LOGSTASH" class="ch.qos.logback.classic.net.SocketAppender">-->
+        <!--<param name="remoteHost" value="120.0.0.1" />-->
+        <!--<param name="port" value="4560"/>   &lt;!&ndash; log default port 4560 &ndash;&gt;-->
+        <!--<param name="ReconnectionDelay" value="60000" />-->
+        <!--<param name="LocationInfo" value="true" />-->
+        <!--<param name="Threshold" value="DEBUG" />-->
+    <!--</appender>-->
+
+    <!--<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+        <!--<destination>127.0.0.1:4560</destination>-->
+
+        <!--&lt;!&ndash; encoder is required &ndash;&gt;-->
+        <!--<encoder class="net.logstash.logback.encoder.LogstashEncoder" />-->
+    <!--</appender>-->
+
+    <!-- 级别 trace debug  info warn error  -->
+    <!-- logback.xml 配置文件的寻找方式 -->
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ERROR_FILE" />   <!--ERROR_FILE 这个appender 有自己的level级别配置 因此只输出 warn和error的 -->
+        <!--<appender-ref ref="LOGSTASH"/>-->
+    </root>
+</configuration>
