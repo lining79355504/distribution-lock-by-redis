@@ -4,18 +4,17 @@ package com.open.service;
  * Author:  mort
  * Date :  26/04/2018
  */
-public interface DistributeLockService<K ,V> {
+public interface DistributeLockService {
 
+    String get(String key);
 
-    void set(K key, V value);
+    Long setnx(String key, String value);
 
-    V get(Object key);
+    String getSet(String key, String value);
 
-//    setNx();
-//
-//    getSet();
-//
-//    expire();
+    Long expire(String key, int expireTime);
+
+    Long del(String key);
 
 
 }

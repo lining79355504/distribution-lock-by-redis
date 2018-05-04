@@ -1,5 +1,6 @@
 package com.test;
 
+import com.open.mort.LockServiceUtils;
 import com.open.mort.LockUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,7 +38,7 @@ public class LockUtilsTest {
                 public Boolean call() throws Exception {
                     boolean ret = LockUtils.getLock("174874816" , 4000,8000);
                     logger.info("LockUtils.getLock {}" , ret);
-                    Thread.sleep(2000);
+                    Thread.sleep(20);
                     if(ret) {
                         boolean retRelease = LockUtils.releaseLock("174874816");
                         logger.info("LockUtils.releaseLock {}", retRelease);
@@ -53,7 +54,6 @@ public class LockUtilsTest {
         for (FutureTask<Boolean> item :taskList) {
             try {
                 Boolean ret = item.get();
-//                logger.info("main LockUtils.getLock {}", ret);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -67,4 +67,45 @@ public class LockUtilsTest {
     }
 
 
+
+
+    @Test
+    public void lockServiceTest(){
+
+        ExecutorService executorService = Executors.newFixedThreadPool(4000);
+        List<FutureTask<Boolean>> taskList = new ArrayList<FutureTask<Boolean>>();
+        for (int i = 0; i < 30000; i++) {
+
+            Callable<Boolean> callable = new Callable<Boolean>() {
+                @Override
+                public Boolean call() throws Exception {
+                    boolean ret = LockServiceUtils.getLock("174874816" , 4000,8000);
+                    logger.info("LockServiceUtils.getLock {}" , ret);
+                    Thread.sleep(20);
+                    if(ret) {
+                        boolean retRelease = LockServiceUtils.releaseLock("174874816");
+                        logger.info("LockServiceUtils.releaseLock {}", retRelease);
+                    }
+                    return ret;
+                }
+            };
+            FutureTask<Boolean> task = new FutureTask<Boolean>(callable);
+            executorService.submit(task);
+            taskList.add(task);
+        }
+
+        for (FutureTask<Boolean> item :taskList) {
+            try {
+                Boolean ret = item.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        executorService.isTerminated();
+
+    }
 }

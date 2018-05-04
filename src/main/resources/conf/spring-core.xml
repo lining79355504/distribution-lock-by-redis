@@ -58,6 +58,10 @@
         <!--<property name="poolConfig" ref="poolConfig"/>-->
     </bean>
 
+    <bean id="lockServiceUtils" class="com.open.mort.LockServiceUtils"/>
+
+    <bean id="jedisImpl" class="com.open.impl.JedisImpl"/>
+
 
 
 </beans>
