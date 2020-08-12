@@ -28,6 +28,7 @@ public class JedisImpl extends JedisAbsract {
     private  int port;
     @Value("#{redisConf['redisConf.passwd']}")
     private  String auth;
+
     @Autowired
     private JedisPoolConfig poolConfig;
 
